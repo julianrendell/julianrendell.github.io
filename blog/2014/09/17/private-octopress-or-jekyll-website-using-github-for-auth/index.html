@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Category: Quality - Julian's Blog</title>
+  <title>Private Octopress (or Jekyll) Website Using GitHub for Auth - Julian's Blog</title>
   <meta name="author" content="Julian Rendell">
 
-  <meta name="description" content="Category: quality">
+  
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -14,16 +14,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.julianrendell.com/blog/categories/quality">
+  <link rel="canonical" href="http://blog.julianrendell.com/blog/2014/09/17/private-octopress-or-jekyll-website-using-github-for-auth">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Julian's Blog" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://blog.julianrendell.com/blog/categories/quality">
-  <meta property="og:title" content="Category: Quality - Julian's Blog">
-  <meta property="og:description" content="Category: quality">
+  <meta property="og:url" content="http://blog.julianrendell.com/blog/2014/09/17/private-octopress-or-jekyll-website-using-github-for-auth">
+  <meta property="og:title" content="Private Octopress (or Jekyll) Website Using GitHub for Auth - Julian's Blog">
+  
 
   <script src="/javascripts/libs/jquery/jquery-2.0.3.min.js"></script>
 
@@ -71,10 +71,10 @@
 
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li >
+                <li class="active">
                     <a rel="index" href="/">Blog</a>
                 </li>
-                <li class="active">
+                <li >
                     <a href="/blog/archives">Archives</a>
                 </li>
             </ul>
@@ -104,74 +104,157 @@
       <div id="main" class="container">
         <div id="content">
           <div class="row">
-  <div class="page-content col-md-9">
-    <article role="article">
+  <div class="page-content col-md-9" itemscope itemtype="http://schema.org/Blog">
+    <meta itemprop="name" content="Julian's Blog" />
+    <meta itemprop="description" content="This and that." />
+    <meta itemprop="url" content="http://blog.julianrendell.com" />
+    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
       
-        <header class="page-header">
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-09-17T19:10:36-07:00"  data-updated="true" itemprop="datePublished dateCreated"></time>
+        
+           | <a href="#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://blog.julianrendell.com">Comments</a>
+        
+      </p>
+    
+    
+    <h1 class="entry-title" itemprop="name headline">
+        Private Octopress (or Jekyll) Website Using GitHub for Auth
+        
+    </h1>
+    
+  </header>
+
+
+<div class="entry-content clearfix" itemprop="articleBody description"><p><img class="pull left" src="/images/2014-09-17-post-private-octopress-or-jekyll-website-using-github-for-auth/bouncercat.png" width="320" height="240" title="The Bouncer" ></p>
+
+<p>What to do when you have a private <a href="http://www.github.com">GitHub</a> repo that you want <em>privately</em> publish some extra information for?</p>
+
+<!-- more -->
+
+
+<p>Examples include:</p>
+
+<ul>
+<li><a href="http://www.octopress.org">Octopress</a> or <a href="http://jekyllrb.com/">Jekyll</a> styled blog for developer notes and ideas</li>
+<li>static code documentation, eg <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a></li>
+<li>other code analysis</li>
+<li>etc</li>
+</ul>
+
+
+<p>That is, just about anything beyond an embedded <code>readme.md</code> file in your source code.</p>
+
+<p>The short answer is to craft a custom application that uses the <a href="https://developer.github.com/v3/">GitHub API</a> to do <code>OAUTH</code> authentication.</p>
+
+<p>An easy answer is to stand on the shoulders of giants and use a library: <a href="https://github.com/benbalter/jekyll-auth">Jekyll Auth</a>!</p>
+
+<p>In hindsight this really is super easy, but there are a few points that I got stuck on.</p>
+
+<h1>Overview</h1>
+
+<p><a href="https://github.com/benbalter/jekyll-auth">Jekyll Auth</a> is based on <a href="http://www.sinatrarb.com/intro.html">Sinatra</a>.</p>
+
+<p><a href="http://www.sinatrarb.com/intro.html">Sinatra</a> is a very easy to use DSL for creating web apps.</p>
+
+<p>It&rsquo;s written in <a href="https://www.ruby-lang.org/">Ruby</a>.</p>
+
+<p><a href="https://github.com/atmos/sinatra_auth_github">Sinatra GitHub OAuth</a> is included, and does the magic of checking with
+<a href="http://www.github.com">GitHub</a> to see if a user is allowed access.</p>
+
+<p>It also uses <a href="http://jekyllrb.com/">Jekyll</a> to generate a static website from <a href="http://daringfireball.net/projects/markdown/">Markdown</a> files.</p>
+
+<p>It uses the <a href="http://heroku.com/home">Heroku</a> web-hosting platform to generate and host the protected website.</p>
+
+<p><em>&hellip;more to come&hellip;</em></p>
+</div>
+
+
+      <footer>
+        <p class="meta text-muted">
           
+  
+
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">Julian Rendell</span></span>
+
           
-            <h1 class="entry-title">
-              Category: Quality
-              
-            </h1>
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-09-17T19:10:36-07:00"  data-updated="true" itemprop="datePublished dateCreated"></time>
           
-        </header>
-      
-      <div class="entry-content">
-        <div id="blog-archives" class="category" itemscope itemtype="http://schema.org/Blog">
-<meta itemprop="name" content="Julian's Blog" />
-<meta itemprop="description" content="This and that." />
-<meta itemprop="url" content="http://blog.julianrendell.com" />
-
-
-
-  
-  <h2>2013</h2>
-
-<article class="page-header" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-  
-<h1 itemprop="name headline"><a href="/blog/2013/04/11/how-should-software-quality-responsibilities-be-partitioned/" itemprop="url">How Should Software Quality Responsibilities by Partitioned?</a></h1>
-<p class="meta text-muted">
-  
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-04-11T00:00:00-07:00"  data-updated="true" itemprop="datePublished dateCreated"></time>
-  
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category label label-primary' href='/blog/categories/career/'>career</a> <a class='category label label-primary' href='/blog/categories/quality/'>quality</a>
+    <a class='category label label-primary' href='/blog/categories/github/'>github</a>
   
 </span>
 
 
-</p>
-
-</article>
-
+        </p>
+        
+          <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.julianrendell.com/blog/2014/09/17/private-octopress-or-jekyll-website-using-github-for-auth/" data-via="julianrendell" data-counturl="http://blog.julianrendell.com/blog/2014/09/17/private-octopress-or-jekyll-website-using-github-for-auth/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
 
-      </div>
-      
+        
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="/blog/2013/04/11/how-should-software-quality-responsibilities-be-partitioned/" title="Previous Post: How should Software Quality Responsibilities by Partitioned?">&laquo; How should Software Quality Responsibilities by Partitioned?</a></li>
+            
+            
+          </ul>
+        
+      </footer>
     </article>
+    
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+      </section>
     
   </div>
 
   
-    <aside class="sidebar col-md-3">
-      
-        <section class="panel panel-default">
+  <aside class="sidebar col-md-3">
+    
+      <section class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">About Me</h3>
   </div>
@@ -197,7 +280,7 @@
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/2014/09/17/private-octopress-or-jekyll-website-using-github-for-auth/">Private Octopress (or Jekyll) Website Using GitHub for Auth</a>
+    <a class="list-group-item active" href="/blog/2014/09/17/private-octopress-or-jekyll-website-using-github-for-auth/">Private Octopress (or Jekyll) Website Using GitHub for Auth</a>
     
     <a class="list-group-item " href="/blog/2013/04/11/how-should-software-quality-responsibilities-be-partitioned/">How Should Software Quality Responsibilities by Partitioned?</a>
     
@@ -309,8 +392,8 @@
 
 
 
-      
-    </aside>
+    
+  </aside>
   
 </div>
 
@@ -334,7 +417,10 @@
       var disqus_shortname = 'julianrendellsblog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.julianrendell.com/blog/2014/09/17/private-octopress-or-jekyll-website-using-github-for-auth/';
+        var disqus_url = 'http://blog.julianrendell.com/blog/2014/09/17/private-octopress-or-jekyll-website-using-github-for-auth/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

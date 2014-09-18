@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: career | Julian's Blog]]></title>
+  <title><![CDATA[Category: Career | Julian's Blog]]></title>
   <link href="http://blog.julianrendell.com/blog/categories/career/atom.xml" rel="self"/>
   <link href="http://blog.julianrendell.com/"/>
-  <updated>2014-09-17T18:00:36-07:00</updated>
+  <updated>2014-09-18T00:30:43-07:00</updated>
   <id>http://blog.julianrendell.com/</id>
   <author>
     <name><![CDATA[Julian Rendell]]></name>
@@ -14,13 +14,18 @@
 
   
   <entry>
-    <title type="html"><![CDATA[How should Software Quality Responsibilities by Partitioned?]]></title>
+    <title type="html"><![CDATA[How Should Software Quality Responsibilities by Partitioned?]]></title>
     <link href="http://blog.julianrendell.com/blog/2013/04/11/how-should-software-quality-responsibilities-be-partitioned/"/>
     <updated>2013-04-11T00:00:00-07:00</updated>
     <id>http://blog.julianrendell.com/blog/2013/04/11/how-should-software-quality-responsibilities-be-partitioned</id>
     <content type="html"><![CDATA[<p>Recently I&rsquo;ve been thinking about different partitions of responsibility for software quality assurance to ensure the delivery of great software.</p>
 
-<p>I&rsquo;m basing this on my experiences thus far, which includes working for mid-sized, privately owned companies, through to publicly traded multinationals. I&rsquo;ve seen some data points on the continuum from quality groups completely divorced from development teams, through to embedded quality specialists in development teams with shared quality responsibilities.</p>
+<p>I&rsquo;m basing this on my experiences thus far, which includes working for mid-sized, privately owned companies, through to publicly traded multinationals.</p>
+
+<!-- more -->
+
+
+<p>I&rsquo;ve seen some data points on the continuum from quality groups completely divorced from development teams, through to embedded quality specialists in development teams with shared quality responsibilities.</p>
 
 <p>I&rsquo;ve noticed that separate quality groups tend to allow deeper specialization (finer grained divisions of responsibility) for the quality team members. In contrast, quality &ldquo;specialists&rdquo; embedded in development teams are often expected to be generalists.</p>
 

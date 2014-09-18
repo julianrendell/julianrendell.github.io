@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Github | Julian's Blog]]></title>
+  <link href="http://blog.julianrendell.com/blog/categories/github/atom.xml" rel="self"/>
+  <link href="http://blog.julianrendell.com/"/>
+  <updated>2014-09-18T00:30:43-07:00</updated>
+  <id>http://blog.julianrendell.com/</id>
+  <author>
+    <name><![CDATA[Julian Rendell]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Private Octopress (or Jekyll) Website Using GitHub for Auth]]></title>
+    <link href="http://blog.julianrendell.com/blog/2014/09/17/private-octopress-or-jekyll-website-using-github-for-auth/"/>
+    <updated>2014-09-17T19:10:36-07:00</updated>
+    <id>http://blog.julianrendell.com/blog/2014/09/17/private-octopress-or-jekyll-website-using-github-for-auth</id>
+    <content type="html"><![CDATA[<p><img class="pull left" src="/images/2014-09-17-post-private-octopress-or-jekyll-website-using-github-for-auth/bouncercat.png" width="320" height="240" title="The Bouncer" ></p>
+
+<p>What to do when you have a private <a href="http://www.github.com">GitHub</a> repo that you want <em>privately</em> publish some extra information for?</p>
+
+<!-- more -->
+
+
+<p>Examples include:</p>
+
+<ul>
+<li><a href="http://www.octopress.org">Octopress</a> or <a href="http://jekyllrb.com/">Jekyll</a> styled blog for developer notes and ideas</li>
+<li>static code documentation, eg <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a></li>
+<li>other code analysis</li>
+<li>etc</li>
+</ul>
+
+
+<p>That is, just about anything beyond an embedded <code>readme.md</code> file in your source code.</p>
+
+<p>The short answer is to craft a custom application that uses the <a href="https://developer.github.com/v3/">GitHub API</a> to do <code>OAUTH</code> authentication.</p>
+
+<p>An easy answer is to stand on the shoulders of giants and use a library: <a href="https://github.com/benbalter/jekyll-auth">Jekyll Auth</a>!</p>
+
+<p>In hindsight this really is super easy, but there are a few points that I got stuck on.</p>
+
+<h1>Overview</h1>
+
+<p><a href="https://github.com/benbalter/jekyll-auth">Jekyll Auth</a> is based on <a href="http://www.sinatrarb.com/intro.html">Sinatra</a>.</p>
+
+<p><a href="http://www.sinatrarb.com/intro.html">Sinatra</a> is a very easy to use DSL for creating web apps.</p>
+
+<p>It&rsquo;s written in <a href="https://www.ruby-lang.org/">Ruby</a>.</p>
+
+<p><a href="https://github.com/atmos/sinatra_auth_github">Sinatra GitHub OAuth</a> is included, and does the magic of checking with
+<a href="http://www.github.com">GitHub</a> to see if a user is allowed access.</p>
+
+<p>It also uses <a href="http://jekyllrb.com/">Jekyll</a> to generate a static website from <a href="http://daringfireball.net/projects/markdown/">Markdown</a> files.</p>
+
+<p>It uses the <a href="http://heroku.com/home">Heroku</a> web-hosting platform to generate and host the protected website.</p>
+
+<p><em>&hellip;more to come&hellip;</em></p>
+]]></content>
+  </entry>
+  
+</feed>
